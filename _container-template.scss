@@ -1,0 +1,32 @@
+@mixin template($width,$height,$m1, $m2,$bg,$top-left,$top-right,$bot-left,$bot-right) {
+    width:$width;
+    height:$height;
+    margin: $m1 $m2;
+    background-color: $bg;
+    border-top-left-radius: $top-left;
+    border-top-right-radius: $top-right;
+    border-bottom-left-radius:$bot-left;
+    border-bottom-right-radius: $bot-right;
+    
+}
+
+@mixin likes-template($top, $left,$size,$weight,$percentage) {
+    position: relative;
+    top:$top;
+    left:$left;
+    font-size:$size;
+    font-weight:$weight;
+    opacity: $percentage;
+    
+}
+
+@mixin image-template(){    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: $accent;
+    background-blend-mode:overlay;
+    opacity: 70%;
+    
+
+}

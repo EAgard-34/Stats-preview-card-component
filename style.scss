@@ -1,0 +1,158 @@
+@import 'variables';
+@import 'container-template';
+
+// mixin (template) - 
+// width, height, magrin, margin, background-color
+// border-top-left-radius
+// border-top-right-radius
+// border-bottom-left-radius
+// border-bottom-right-radius
+
+main{
+    @include template(320px, auto, 0, auto, $bg-color,0,0,0,0);
+    padding: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+}
+
+
+.head{
+    @include template(320px, 200px, auto ,auto, $accent,10px,10px,0,0);
+    @include image-template();
+    background-image: url(image-header-mobile.jpg);    
+    
+}
+.main{
+    @include template(280px, auto, auto, auto, $card-bg, 0,0,10px,10px);
+    
+    padding: 20px;
+    padding-bottom: 15px;
+    color:$text-color;
+    font-family: $text-style;
+    line-height: 1.6;
+
+
+    h2{
+        text-align: center;
+        font-size: 28px;
+    span{
+        color:$accent;
+        font-weight: 800;
+        
+    }
+}
+p{
+    text-align: center;
+    opacity: 60%;
+   
+}
+
+    
+}
+
+.end{
+    text-align: center;
+   
+    figcaption{
+        @include likes-template(-28px,0px,$font,100,50%);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    } 
+    sub{
+        @include likes-template(-10px,3px,26px,900,100%);
+       
+    }
+}
+
+@media screen and (min-width:600px) {
+    main{
+        @include template(1440px, 1000px, auto, auto, $bg-color,0,0,0,0);
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .head{
+        @include template(400px, 340px, 0 ,0, black,0px,10px,0,10px);
+        @include image-template();
+        background-image: url(image-header-desktop.jpg);
+        
+    }
+    
+    .main{
+        @include template(300px, 300px, 0, 0, rgb(44, 14, 68), 10px,0,10px,0px);
+        padding: 20px;
+        padding-right: 80px;
+        padding-left: 40px;
+        p{
+            text-align: left;
+            font-size:12px;
+        }
+        h2{
+            text-align: left;
+        }
+    } 
+    
+    
+    .end{
+        display: flex;            
+        justify-content: space-evenly;
+        
+        
+    
+        
+        .companies {
+            h2{
+                @include likes-template(50PX,-35PX,12px,100,100%);
+                
+            }
+                         
+            sub{
+                @include likes-template(-5px,0px,10px,100,100%);
+                    
+                }
+
+            figcaption{
+                @include likes-template(40px,-35px,8px,0,50%);
+                    
+                }
+            }
+            
+        .templates {
+            h2{
+                @include likes-template(52px,0px,12px,100,100%);
+                
+                }                
+                    
+            figcaption{
+                @include likes-template(43px,0px,8px,0,50%);
+                             
+                        
+                 }                           
+            
+        
+                           
+        }
+        .queries {
+            h2{
+                @include likes-template(50px,15px,12px,0,100%);
+                
+            }                
+            sub{
+                @include likes-template(-4px,0px,12px,0,100%);
+                
+             }
+            figcaption{
+                @include likes-template(38px,15px,8px,0,50%);
+                
+            }
+    }      
+        
+}
+
+}
+
+
